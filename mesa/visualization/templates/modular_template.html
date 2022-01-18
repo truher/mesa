@@ -41,9 +41,9 @@
             </div><!--/.nav-collapse -->
         </div>
     </nav>
-    <div class="container">
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3" id="sidebar"></div>
-        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-9" id="elements">
+    <div class="container-fluid">
+        <div id="sidebar"></div>
+        <div id="elements">
             <div id="elements-topbar">
                 <div class="input-group input-group-lg">
                     <label class="label label-primary" for="fps" style="margin-right: 15px">Frames Per Second</label>
@@ -82,7 +82,7 @@
 		<script src="/static/js/{{ file_name }}" type="text/javascript"></script>
 	{% end %}
 	{% for file_name in local_includes %}
-		<script src="/local/{{ file_name }}" type="text/javascript"></script>
+		<script type="module" src="/local/{{ file_name }}" ></script>
 	{% end %}
 
     <!-- template-specific code snippets here -->
@@ -92,7 +92,7 @@
     <script src="/static/js/runcontrol.js"></script>
 
     <!-- Element-specific scripts go here -->
-    <script>
+    <script type="module">
 	    {% for script in scripts %}
 			{% raw script %}
 	    {% end %}

@@ -81,3 +81,5 @@ var Simple_Continuous_Module = function(canvas_width, canvas_height) {
 	};
 
 };
+
+export {Simple_Continuous_Module};

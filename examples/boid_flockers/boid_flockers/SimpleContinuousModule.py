@@ -14,10 +14,11 @@ class SimpleCanvas(VisualizationElement):
         self.portrayal_method = portrayal_method
         self.canvas_height = canvas_height
         self.canvas_width = canvas_width
-        new_element = "new Simple_Continuous_Module({}, {})".format(
-            self.canvas_width, self.canvas_height
+        self.js_code = (
+            "import {Simple_Continuous_Module} from './local/boid_flockers/simple_continuous_canvas.js';\n"
+            f"elements.push(new Simple_Continuous_Module({self.canvas_width}, {self.canvas_height}));"
+
         )
-        self.js_code = "elements.push(" + new_element + ");"
 
     def render(self, model):
         space_state = []
